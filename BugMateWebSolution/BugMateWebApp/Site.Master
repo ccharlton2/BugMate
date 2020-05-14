@@ -62,12 +62,12 @@
                     <button class="btn btn-outline-success" type="button">Create Ticket</button>
                 </div>
                 <div class="nav-item dropdown my-2 mr-5 my-md-0">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="user-profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users" id="profile" style="color : #339af0"></i></a>
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="user-profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users" id="profile" style="color: #339af0"></i></a>
                     <div class="dropdown-menu" aria-labelledby="user-profile-dropdown">
-                        <a class="dropdown-item" href="#">Your profile</a>
-                        <a class="dropdown-item" href="#">Your projects</a>
-                        <a class="dropdown-item" href="#">Your tickets</a>
-                        <a class="dropdown-item" href="#">Your team</a>
+                        <a class="dropdown-item" href="#">My profile</a>
+                        <a class="dropdown-item" href="#">My projects</a>
+                        <a class="dropdown-item" href="#">My tickets</a>
+                        <a class="dropdown-item" href="#">My team</a>
                         <a class="dropdown-item" href="#">Log out</a>
                     </div>
                 </div>

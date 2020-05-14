@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+html, body {
+    height: 100%;
+}
+
+body {
+    padding-bottom: 70px;
+}
+
 /* For mobile phones: */
 [class*="col-"] {
   width: 100%;
@@ -44,9 +52,9 @@
   margin: 10px 0;
 }
 
-.team-members-header {
-  display: flex;
-  flex-wrap: wrap;
+.dashboard-component-header {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .add-member {
@@ -127,9 +135,4 @@ i {
   float: right;
   margin-left: 20px;
   margin-right: 0;
-}
-
-.open-tickets-header {
-  display: flex;
-  flex-wrap: wrap;
 }
