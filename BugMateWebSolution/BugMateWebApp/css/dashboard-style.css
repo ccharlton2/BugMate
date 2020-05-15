@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-html, body {
-    height: 100%;
-}
-
-body {
-    padding-bottom: 70px;
-}
-
 /* For mobile phones: */
 [class*="col-"] {
   width: 100%;
@@ -53,8 +45,8 @@ body {
 }
 
 .dashboard-component-header {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .add-member {
@@ -100,9 +92,16 @@ body {
   margin-right: 0;
 }
 
+.dashboard-item-alt p {
+  border: 2px solid #ddd;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
 /* Style time text */
-.time-right {
-  float: right;
+.online-status {
   color: #aaa;
 }
 
@@ -126,9 +125,18 @@ i {
   text-align: center;
 }
 
+.item-left {
+    float: left;
+    margin: 0px;
+}
+
 .items-overflow {
   height: 50vh;
   overflow: auto;
+}
+
+.item-description {
+  overflow-wrap: anywhere;
 }
 
 .ticket-icon {
