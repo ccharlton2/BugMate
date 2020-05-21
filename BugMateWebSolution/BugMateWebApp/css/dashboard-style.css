@@ -37,11 +37,11 @@
 }
 
 .dashboard-items-container {
-  border: 2px solid #dedede;
-  background-color: #ffffff;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
+    border: 2px solid #dedede;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
 }
 
 .dashboard-component-header {
@@ -83,6 +83,14 @@
   width: 100%;
   margin-right: 20px;
   border-radius: 50%;
+}
+
+.profile-bio-img {
+    float: left;
+    height: 25vh;
+    max-width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
 }
 
 /* Style the right image */

@@ -49,7 +49,7 @@
             <div class="collapse navbar-collapse" id="dashboard-navbar">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/Default.aspx">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="About.aspx">About</a>
@@ -64,9 +64,9 @@
                 <div class="nav-item dropdown my-2 mr-5 my-md-0">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="user-profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users" id="profile" style="color: #339af0"></i></a>
                     <div class="dropdown-menu" aria-labelledby="user-profile-dropdown">
-                        <a class="dropdown-item" href="#">My profile</a>
-                        <a class="dropdown-item" href="#">My projects</a>
-                        <a class="dropdown-item" href="#">My tickets</a>
+                        <a class="dropdown-item" href="/WebPages/UserPages/MyProfile.aspx">My profile</a>
+                        <a class="dropdown-item" href="/WebPages/UserPages/MyProjects.aspx">My projects</a>
+                        <a class="dropdown-item" href="/WebPages/UserPages/MyTickets.aspx">My tickets</a>
                         <a class="dropdown-item" href="#">My team</a>
                         <a class="dropdown-item" href="#">Log out</a>
                     </div>
@@ -81,7 +81,7 @@
                 <div class="container-fluid">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="/Contact.aspx">Contact</a>
                         </li>
                     </ul>
                 </div>

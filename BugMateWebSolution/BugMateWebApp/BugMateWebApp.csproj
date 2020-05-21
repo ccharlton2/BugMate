@@ -142,7 +142,11 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="WebPages\Important\LogIn.aspx" />
     <Content Include="WebPages\Ticket-Creation.aspx" />
+    <Content Include="WebPages\UserPages\MyProfile.aspx" />
+    <Content Include="WebPages\UserPages\MyProjects.aspx" />
+    <Content Include="WebPages\UserPages\MyTickets.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -306,12 +310,40 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="WebPages\Important\LogIn.aspx.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebPages\Important\LogIn.aspx.designer.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebPages\Ticket-Creation.aspx.cs">
       <DependentUpon>Ticket-Creation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebPages\Ticket-Creation.aspx.designer.cs">
       <DependentUpon>Ticket-Creation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebPages\UserPages\MyProfile.aspx.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebPages\UserPages\MyProfile.aspx.designer.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebPages\UserPages\MyProjects.aspx.cs">
+      <DependentUpon>MyProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebPages\UserPages\MyProjects.aspx.designer.cs">
+      <DependentUpon>MyProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebPages\UserPages\MyTickets.aspx.cs">
+      <DependentUpon>MyTickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebPages\UserPages\MyTickets.aspx.designer.cs">
+      <DependentUpon>MyTickets.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
