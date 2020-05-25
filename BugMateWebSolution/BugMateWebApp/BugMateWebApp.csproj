@@ -143,6 +143,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="WebPages\Important\LogIn.aspx" />
+    <Content Include="WebPages\Project-Creation.aspx" />
     <Content Include="WebPages\Ticket-Creation.aspx" />
     <Content Include="WebPages\UserPages\MyProfile.aspx" />
     <Content Include="WebPages\UserPages\MyProjects.aspx" />
@@ -316,6 +317,13 @@
     </Compile>
     <Compile Include="WebPages\Important\LogIn.aspx.designer.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebPages\Project-Creation.aspx.cs">
+      <DependentUpon>Project-Creation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebPages\Project-Creation.aspx.designer.cs">
+      <DependentUpon>Project-Creation.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebPages\Ticket-Creation.aspx.cs">
       <DependentUpon>Ticket-Creation.aspx</DependentUpon>
