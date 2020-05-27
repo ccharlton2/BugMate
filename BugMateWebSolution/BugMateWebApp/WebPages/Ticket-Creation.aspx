@@ -62,7 +62,7 @@
 
             <button type="button" class="btn btn-primary">Create Ticket</button>
             <button type="button" class="btn btn-secondary">Save</button>
-            <button type="button" class="btn btn-link">Cancel</button>
+            <a href="../../Default.aspx" class="btn btn-link">Cancel</a>
 
         </div>
     </div>
