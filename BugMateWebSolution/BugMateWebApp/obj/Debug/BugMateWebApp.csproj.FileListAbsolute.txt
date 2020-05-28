@@ -219,3 +219,7 @@ C:\Users\phile\Documents\CodingProjects\BugMate\BugMateProject\BugMateWebSolutio
 C:\Users\phile\Documents\CodingProjects\BugMate\BugMateProject\BugMateWebSolution\BugMateWebApp\obj\Debug\BugMateWebApp.csproj.CopyComplete
 C:\Users\phile\Documents\CodingProjects\BugMate\BugMateProject\BugMateWebSolution\BugMateWebApp\obj\Debug\BugMateWebApp.dll
 C:\Users\phile\Documents\CodingProjects\BugMate\BugMateProject\BugMateWebSolution\BugMateWebApp\obj\Debug\BugMateWebApp.pdb
+C:\Users\phile\Documents\CodingProjects\BugMate\BugMateProject\BugMateWebSolution\BugMateWebApp\bin\EntityFramework.dll
+C:\Users\phile\Documents\CodingProjects\BugMate\BugMateProject\BugMateWebSolution\BugMateWebApp\bin\EntityFramework.SqlServer.dll
+C:\Users\phile\Documents\CodingProjects\BugMate\BugMateProject\BugMateWebSolution\BugMateWebApp\bin\EntityFramework.xml
+C:\Users\phile\Documents\CodingProjects\BugMate\BugMateProject\BugMateWebSolution\BugMateWebApp\bin\EntityFramework.SqlServer.xml
