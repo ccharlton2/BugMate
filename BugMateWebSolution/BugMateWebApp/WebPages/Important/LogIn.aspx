@@ -41,19 +41,19 @@
             </Scripts>
         </asp:ScriptManager>
 
-            <div class="container">
-                <i class="fas fa-bug mb-4 fa-5x"></i>
-                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-
+        <div class="container">
+            <i class="fas fa-bug mb-4 fa-5x"></i>
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+            <div class="dashboard-items-container">
                 <a href="New-User-Creation.aspx" class="item-left mb-4">New members sign up here!</a>
                 <div class="form-group">
-                    <label for="inputEmail" class="sr-only">Username</label>
-                    <input type="email" id="inputEmail" class="form-control col-12" placeholder="Email address" required="" autofocus="">
+                    <label for="UserEmail" class="sr-only">Username</label>
+                    <asp:TextBox runat="server" id="UserEmail" CssClass="form-control col-12" placeholder="Email address" required="" autofocus=""></asp:TextBox>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" id="inputPassword" class="form-control col-12" placeholder="Password" required="">
+                    <label for="UserPassword" class="sr-only">Password</label>
+                    <asp:TextBox runat="server" TextMode="Password" id="UserPassword" CssClass="form-control col-12" placeholder="Password" required=""></asp:TextBox>
                 </div>
 
                 <div class="checkbox mb-3">
@@ -62,10 +62,12 @@
                         Remember me
                     </label>
                 </div>
-
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <asp:Label runat="server" ID="ErrorMessage"></asp:Label>
+                <asp:Button ID="UserSignInButton" runat="server" CssClass="btn btn-lg btn-primary btn-block col-12" type="submit" Text="Sign In" OnClick="UserSignInButton_Click" />
+                <asp:LinkButton ID="UserSignUp" href="New-User-Creation.aspx" runat="server" CssClass="btn btn-lg btn-secondary btn-block" CausesValidation="false">Sign Up</asp:LinkButton>
             </div>
-        <p>&copy; <%: DateTime.Now.Year %> - Christian Charlton</p>
+        </div>
     </form>
+    <p>&copy; <%: DateTime.Now.Year %> - Christian Charlton</p>
 </body>
 </html>

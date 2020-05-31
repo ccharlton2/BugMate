@@ -12,8 +12,10 @@ namespace BugMateSystem.Entities
     public class Project_member
     {
         [Key]
+        [Column(Order = 1)]
         public int Userid { get; set; }
         [Key]
+        [Column(Order = 2)]
         public int Project_number { get; set; }
     }
 }

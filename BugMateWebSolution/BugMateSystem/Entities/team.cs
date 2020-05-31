@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BugMateSystem.Entities
 {
-    [Table("user_role")]
+    [Table("team")]
     public class Team
     {
         [Key]

@@ -223,3 +223,6 @@ C:\Users\phile\Documents\CodingProjects\BugMate\BugMateProject\BugMateWebSolutio
 C:\Users\phile\Documents\CodingProjects\BugMate\BugMateProject\BugMateWebSolution\BugMateWebApp\bin\EntityFramework.SqlServer.dll
 C:\Users\phile\Documents\CodingProjects\BugMate\BugMateProject\BugMateWebSolution\BugMateWebApp\bin\EntityFramework.xml
 C:\Users\phile\Documents\CodingProjects\BugMate\BugMateProject\BugMateWebSolution\BugMateWebApp\bin\EntityFramework.SqlServer.xml
+C:\Users\phile\Documents\CodingProjects\BugMate\BugMateProject\BugMateWebSolution\BugMateWebApp\bin\BugMateSystem.dll
+C:\Users\phile\Documents\CodingProjects\BugMate\BugMateProject\BugMateWebSolution\BugMateWebApp\bin\BugMateSystem.pdb
+C:\Users\phile\Documents\CodingProjects\BugMate\BugMateProject\BugMateWebSolution\BugMateWebApp\bin\BugMateSystem.dll.config

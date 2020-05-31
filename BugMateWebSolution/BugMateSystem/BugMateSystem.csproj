@@ -71,12 +71,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BugMateWebApp\BugMateWebApp.csproj">
-      <Project>{fa8aeb4d-71ab-40d9-9e87-437b29d96de4}</Project>
-      <Name>BugMateWebApp</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

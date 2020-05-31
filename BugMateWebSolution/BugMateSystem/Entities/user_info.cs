@@ -12,7 +12,7 @@ namespace BugMateSystem.Entities
     public class User_info
     {
         [Key]
-        public int Userid { get; set; }
+        public int? Userid { get; set; }
         public string Username { get; set; }
         public string Password_hash { get; set; }
         public string First_name { get; set; }
