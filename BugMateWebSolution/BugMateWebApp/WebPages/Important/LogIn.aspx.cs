@@ -27,6 +27,10 @@ namespace BugMateWebApp.WebPages.Important
                 {
                     User_infoController sysmgr = new User_infoController();
                     int? userid = sysmgr.Check_Valid_User_Login(UserEmail.Text, UserPassword.Text).Userid;
+                    //List<User_info> info = sysmgr.User_List();
+                    //int userid = 19;
+
+                    var info = sysmgr.User_Find((int)userid);
 
                     if (userid == null)
                     {
@@ -34,8 +38,9 @@ namespace BugMateWebApp.WebPages.Important
                     }
                     else
                     {
-                        Session["UserId"] = userid;
-                        Response.Redirect("Default.aspx");
+                        Session["UserId"] = 1;
+                        //Response.Redirect("../../Default.aspx");
+                        Results.Text = userid.ToString();
                     }
 
                 }

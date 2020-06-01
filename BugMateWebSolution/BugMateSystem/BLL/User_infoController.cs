@@ -16,9 +16,23 @@ namespace BugMateSystem.BLL
         {
             using (var context = new BugMateContext())
             {
-                IEnumerable<User_info> results = context.Database.SqlQuery<User_info>("user_login @username, @password", new SqlParameter("username", username), new SqlParameter("password", password));
+                var results = context.Database.SqlQuery<User_info>("user_login @username, @password", new SqlParameter("username", username), new SqlParameter("password", password));
 
-                return results.Single();
+                return results.First();
+            }
+        }
+        public List<User_info> User_List()
+        {
+            using (var context = new BugMateContext())
+            {
+                return context.User_Infos.ToList();
+            }
+        }
+        public User_info User_Find(int userid)
+        {
+            using (var context = new BugMateContext())
+            {
+                return context.User_Infos.Find(userid);
             }
         }
     }
