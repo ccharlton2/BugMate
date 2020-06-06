@@ -9,6 +9,7 @@ using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Core;
 using BugMateSystem.BLL;
 using BugMateSystem.Entities;
+using System.Data.SqlClient;
 
 namespace BugMateWebApp.WebPages.Important
 {
@@ -26,11 +27,11 @@ namespace BugMateWebApp.WebPages.Important
                 try
                 {
                     User_infoController sysmgr = new User_infoController();
-                    int? userid = sysmgr.Check_Valid_User_Login(UserEmail.Text, UserPassword.Text).Userid;
+                    int? userid = sysmgr.Check_Valid_User_Login(UserEmail.Text, UserPassword.Text);
                     //List<User_info> info = sysmgr.User_List();
                     //int userid = 19;
 
-                    var info = sysmgr.User_Find((int)userid);
+                    //var info = sysmgr.User_Find((int)userid);
 
                     if (userid == null)
                     {
@@ -40,14 +41,18 @@ namespace BugMateWebApp.WebPages.Important
                     {
                         Session["UserId"] = 1;
                         //Response.Redirect("../../Default.aspx");
+
                         Results.Text = userid.ToString();
                     }
-
+                }
+                catch (SqlException sqlex)
+                {
+                    ErrorMessage.Text = GetInnerException(sqlex).ToString();
                 }
                 catch (Exception ex)
                 {
 
-                    ErrorMessage.Text = GetInnerException(ex).ToString();
+                    //ErrorMessage.Text = GetInnerException(ex).ToString();
                 }
             }
         }

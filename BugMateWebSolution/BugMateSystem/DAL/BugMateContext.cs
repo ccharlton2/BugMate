@@ -10,6 +10,11 @@ namespace BugMateSystem.DAL
 {
     internal class BugMateContext : DbContext
     {
+        public BugMateContext()
+        : base("name=BMDB")
+        {
+        }
+
         public DbSet<Project> Projects { get; set; }
         public DbSet<Project_member> Project_Members { get; set; }
         public DbSet<Saved_project> Saved_Projects { get; set; }

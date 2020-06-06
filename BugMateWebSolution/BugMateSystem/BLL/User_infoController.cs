@@ -7,18 +7,19 @@ using BugMateSystem.DAL;
 using BugMateSystem.Entities;
 using System.ComponentModel;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace BugMateSystem.BLL
 {
     public class User_infoController
     {
-        public User_info Check_Valid_User_Login(string username, string password)
+        public int? Check_Valid_User_Login(string username, string password)
         {
             using (var context = new BugMateContext())
             {
-                var results = context.Database.SqlQuery<User_info>("user_login @username, @password", new SqlParameter("username", username), new SqlParameter("password", password));
-
-                return results.First();
+                int? result = context.Database.ExecuteSqlCommand("exec user_login @username, @password", new SqlParameter("username", username), new SqlParameter("password", password));
+                //context.Database.ExecuteSqlCommand("user_login @username, @password", new SqlParameter("username", username), new SqlParameter("password", password));
+                return result;
             }
         }
         public List<User_info> User_List()
