@@ -18,8 +18,8 @@ namespace BugMateSystem.BLL
             {
                 IEnumerable<Project> results =
                 context.Database.SqlQuery<Project>("create_project @project_name, @date_started, @project_description, @project_status, @project_active, @next_iteration_date, @created_by_userid, @project_leader_id",
-                new SqlParameter("ProgramID", programid), new SqlParameter("CourseID", courseid), new SqlParameter("CourseID", courseid), new SqlParameter("CourseID", courseid),
-                new SqlParameter("CourseID", courseid), new SqlParameter("CourseID", courseid), new SqlParameter("CourseID", courseid), new SqlParameter("CourseID", courseid));
+                new SqlParameter("project_name", projectname), new SqlParameter("date_started", datestarted), new SqlParameter("project_description", projectdescription), new SqlParameter("project_status", projectstatus),
+                new SqlParameter("project_active", projectactive), new SqlParameter("next_iteration_date", nextiterationdate), new SqlParameter("created_by_userid", createdbyuserid), new SqlParameter("project_leader_id", projectleaderid));
 
                 return results.First();
             }

@@ -14,8 +14,8 @@
             </div>
 
             <div class="form-group">
-                <label for="BugDescription">Description</label>
-                <asp:TextBox runat="server" ID="BugDescription" TextMode="MultiLine" CssClass="form-control col-12" placeholder="Description" required="" autofocus=""></asp:TextBox>
+                <label for="ProjectDescription">Description</label>
+                <asp:TextBox runat="server" ID="ProjectDescription" TextMode="MultiLine" CssClass="form-control col-12" placeholder="Description" required="" autofocus=""></asp:TextBox>
             </div>
 
             <div class="form-check pb-4">
@@ -28,12 +28,13 @@
 
             <div class="form-group">
                 <label for="NextIterationDate" class="col-form-label">Next Iteration Date</label>
-                <%--<asp:TextBox runat="server" ID="NextIterationDate" CssClass="form-control col-12" TextMode="Date" placeholder="Next Iteration Date" required="" autofocus=""></asp:TextBox>--%>
                 <input runat="server" class="form-control col-12" type="date" value="" id="NextIterationDate">
             </div>
 
-            <asp:Button ID="CreateProject" runat="server" CssClass="btn btn-primary" type="submit" Text="Create Project" />
-            <asp:Button ID="SaveProject" runat="server" CssClass="btn btn-secondary" type="submit" Text="Save" />
+            <asp:Label runat="server" ID="YO"></asp:Label>
+
+            <asp:Button ID="CreateProject" runat="server" CssClass="btn btn-primary" type="submit" Text="Create Project" OnClick="CreateProject_Click" />
+            <asp:Button ID="SaveProject" runat="server" CssClass="btn btn-secondary" type="submit" Text="Save" OnClick="SaveProject_Click" />
             <a href="../../Default.aspx" class="btn btn-link">Cancel</a>
 
         </div>

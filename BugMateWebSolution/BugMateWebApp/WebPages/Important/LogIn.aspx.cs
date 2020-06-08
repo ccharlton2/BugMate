@@ -51,43 +51,6 @@ namespace BugMateWebApp.WebPages.Important
                             Response.Redirect("../../Default.aspx");
                         }
                     }
-
-                    //using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-JIHA8T8;Initial Catalog=BugMate_DB;Integrated Security=True"))
-                    //{
-                    //    using (SqlCommand cmd = new SqlCommand("user_login", con))
-                    //    {
-                    //        cmd.CommandType = CommandType.StoredProcedure;
-
-                    //        cmd.Parameters.Add("@username", SqlDbType.NVarChar).Value = UserEmail.Text;
-                    //        cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = UserPassword.Text;
-
-                    //        con.Open();
-                    //        object result = cmd.ExecuteScalar();
-                    //        con.Close();
-
-                    //        if (result == null)
-                    //        {
-                    //            ErrorMessage.Text = "Invalid user.";
-                    //        }
-                    //        else
-                    //        {
-                    //            Session["UserId"] = result;
-                    //            if (result.ToString() == "-2")
-                    //            {
-                    //                Results.Text = "Incorrect password.";
-                    //            }
-                    //            else if (result.ToString() == "-3")
-                    //            {
-                    //                Results.Text = "Invalid login credentials.";
-                    //            }
-                    //            else
-                    //            {
-                    //                Results.Text = result.ToString();
-                    //                Response.Redirect("../../Default.aspx");
-                    //            }
-                    //        }
-                    //    }
-                    //}
                 }
                 catch (SqlException sqlex)
                 {
@@ -99,7 +62,6 @@ namespace BugMateWebApp.WebPages.Important
                 }
             }
         }
-
         protected Exception GetInnerException(Exception ex)
         {
             while (ex.InnerException != null)

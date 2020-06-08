@@ -24,13 +24,13 @@ namespace BugMateWebApp.WebPages
         protected global::System.Web.UI.WebControls.TextBox ProjectName;
 
         /// <summary>
-        /// BugDescription control.
+        /// ProjectDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox BugDescription;
+        protected global::System.Web.UI.WebControls.TextBox ProjectDescription;
 
         /// <summary>
         /// ProjectMaintenance control.
@@ -49,6 +49,15 @@ namespace BugMateWebApp.WebPages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl NextIterationDate;
+
+        /// <summary>
+        /// YO control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label YO;
 
         /// <summary>
         /// CreateProject control.

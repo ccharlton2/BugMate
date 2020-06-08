@@ -18,9 +18,6 @@ namespace BugMateSystem.BLL
         {
             using (var context = new BugMateContext())
             {
-                //int? result = context.Database.ExecuteSqlCommand("user_login @username, @password", new SqlParameter("username", username), new SqlParameter("password", password));
-                //context.Database.ExecuteSqlCommand("user_login @username, @password", new SqlParameter("username", username), new SqlParameter("password", password));
-
                 using (SqlConnection con = new SqlConnection(new BugMateContext().Database.Connection.ConnectionString))
                 {
                     using (SqlCommand cmd = new SqlCommand("user_login", con))
