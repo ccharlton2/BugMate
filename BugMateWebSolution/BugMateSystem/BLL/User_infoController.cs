@@ -8,6 +8,7 @@ using BugMateSystem.Entities;
 using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Data;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace BugMateSystem.BLL
 {
@@ -17,9 +18,25 @@ namespace BugMateSystem.BLL
         {
             using (var context = new BugMateContext())
             {
-                int? result = context.Database.ExecuteSqlCommand("exec user_login @username, @password", new SqlParameter("username", username), new SqlParameter("password", password));
+                //int? result = context.Database.ExecuteSqlCommand("user_login @username, @password", new SqlParameter("username", username), new SqlParameter("password", password));
                 //context.Database.ExecuteSqlCommand("user_login @username, @password", new SqlParameter("username", username), new SqlParameter("password", password));
-                return result;
+
+                using (SqlConnection con = new SqlConnection(new BugMateContext().Database.Connection.ConnectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand("user_login", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
+                        cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = password;
+
+                        con.Open();
+                        object result = cmd.ExecuteScalar();
+                        con.Close();
+
+                        return (int?)result;
+                    }
+                }
             }
         }
         public List<User_info> User_List()

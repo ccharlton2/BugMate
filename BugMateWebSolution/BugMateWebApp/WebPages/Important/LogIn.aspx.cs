@@ -10,6 +10,7 @@ using System.Data.Entity.Core;
 using BugMateSystem.BLL;
 using BugMateSystem.Entities;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace BugMateWebApp.WebPages.Important
 {
@@ -27,23 +28,66 @@ namespace BugMateWebApp.WebPages.Important
                 try
                 {
                     User_infoController sysmgr = new User_infoController();
-                    int? userid = sysmgr.Check_Valid_User_Login(UserEmail.Text, UserPassword.Text);
-                    //List<User_info> info = sysmgr.User_List();
-                    //int userid = 19;
+                    int? result = sysmgr.Check_Valid_User_Login(UserEmail.Text, UserPassword.Text);
 
-                    //var info = sysmgr.User_Find((int)userid);
-
-                    if (userid == null)
+                    if (result == null)
                     {
                         ErrorMessage.Text = "Invalid user.";
                     }
                     else
                     {
-                        Session["UserId"] = 1;
-                        //Response.Redirect("../../Default.aspx");
-
-                        Results.Text = userid.ToString();
+                        Session["UserId"] = result;
+                        if (result.ToString() == "-2")
+                        {
+                            Results.Text = "Incorrect password.";
+                        }
+                        else if (result.ToString() == "-3")
+                        {
+                            Results.Text = "Invalid login credentials.";
+                        }
+                        else
+                        {
+                            Results.Text = result.ToString();
+                            Response.Redirect("../../Default.aspx");
+                        }
                     }
+
+                    //using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-JIHA8T8;Initial Catalog=BugMate_DB;Integrated Security=True"))
+                    //{
+                    //    using (SqlCommand cmd = new SqlCommand("user_login", con))
+                    //    {
+                    //        cmd.CommandType = CommandType.StoredProcedure;
+
+                    //        cmd.Parameters.Add("@username", SqlDbType.NVarChar).Value = UserEmail.Text;
+                    //        cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = UserPassword.Text;
+
+                    //        con.Open();
+                    //        object result = cmd.ExecuteScalar();
+                    //        con.Close();
+
+                    //        if (result == null)
+                    //        {
+                    //            ErrorMessage.Text = "Invalid user.";
+                    //        }
+                    //        else
+                    //        {
+                    //            Session["UserId"] = result;
+                    //            if (result.ToString() == "-2")
+                    //            {
+                    //                Results.Text = "Incorrect password.";
+                    //            }
+                    //            else if (result.ToString() == "-3")
+                    //            {
+                    //                Results.Text = "Invalid login credentials.";
+                    //            }
+                    //            else
+                    //            {
+                    //                Results.Text = result.ToString();
+                    //                Response.Redirect("../../Default.aspx");
+                    //            }
+                    //        }
+                    //    }
+                    //}
                 }
                 catch (SqlException sqlex)
                 {
@@ -51,8 +95,7 @@ namespace BugMateWebApp.WebPages.Important
                 }
                 catch (Exception ex)
                 {
-
-                    //ErrorMessage.Text = GetInnerException(ex).ToString();
+                    ErrorMessage.Text = GetInnerException(ex).ToString();
                 }
             }
         }
