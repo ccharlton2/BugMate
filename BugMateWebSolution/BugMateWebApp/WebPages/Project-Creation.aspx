@@ -6,6 +6,12 @@
             <h2>Create A Project</h2>
         </div>
 
+        <asp:DataList ID="UserMessages" runat="server">
+                <ItemTemplate>
+                    <%# Container.DataItem %>
+                </ItemTemplate>
+            </asp:DataList>
+
         <div class="dashboard-items-container">
 
             <div class="form-group">

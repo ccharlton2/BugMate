@@ -12,7 +12,7 @@ namespace BugMateSystem.BLL
 {
     public class ProjectController
     {
-        public Project Create_Project(DateTime? datestarted, string projectstatus, bool projectactive, int createdbyuserid, string projectname, int projectleaderid, string projectdescription = null, DateTime? nextiterationdate = null)
+        public Project Create_Project(DateTime? datestarted, string projectstatus, bool projectactive, int? createdbyuserid, string projectname, int? projectleaderid, string projectdescription = null, DateTime? nextiterationdate = null)
         {
             using (var context = new BugMateContext())
             {
