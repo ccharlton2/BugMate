@@ -27,12 +27,12 @@ namespace BugMateWebApp.WebPages
                     sysmgr.Create_Project(DateTime.UtcNow, ProjectMaintenance.Checked ? "Maintenance" : "InDevelopment", true, (int?)Session["Userid"] == null ? 19 : (int?)Session["Userid"], ProjectName.Text,
                     (int?)Session["Userid"] == null ? 19 : (int?)Session["Userid"], ProjectDescription.Text, DateTime.Parse(NextIterationDate.Value));
 
-                    _usermsgs.Add("ProgramCourse has been added");
+                    _usermsgs.Add("Project has been successfully created.");
                     LoadMessageDisplay(_usermsgs, "alert alert-success");
                 }
                 catch (Exception ex)
                 {
-                    _usermsgs.Add(GetInnerException(ex).ToString());
+                    _usermsgs.Add(ex.Message);
                     LoadMessageDisplay(_usermsgs, "alert alert-danger");
                 }
             }
