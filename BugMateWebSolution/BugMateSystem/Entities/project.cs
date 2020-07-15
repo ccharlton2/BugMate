@@ -13,7 +13,7 @@ namespace BugMateSystem.Entities
     {
         [Key]
         public int Project_number { get; set; }
-        public DateTime Date_started { get; set; }
+        public DateTime? Date_started { get; set; }
         public string Project_description { get; set; }
         public string Project_status { get; set; }
         public bool Project_active { get; set; }

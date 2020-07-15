@@ -31,13 +31,13 @@ namespace BugMateSystem.BLL
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("@project_name", SqlDbType.NVarChar).Value = projectname;
-                    cmd.Parameters.Add("@date_started", SqlDbType.NVarChar).Value = datestarted;
+                    cmd.Parameters.Add("@date_started", SqlDbType.DateTime).Value = datestarted;
                     cmd.Parameters.Add("@project_description", SqlDbType.NVarChar).Value = projectdescription;
                     cmd.Parameters.Add("@project_status", SqlDbType.NVarChar).Value = projectstatus;
                     cmd.Parameters.Add("@project_active", SqlDbType.NVarChar).Value = projectactive;
-                    cmd.Parameters.Add("@next_iteration_date", SqlDbType.NVarChar).Value = nextiterationdate;
-                    cmd.Parameters.Add("@created_by_userid", SqlDbType.NVarChar).Value = createdbyuserid;
-                    cmd.Parameters.Add("@project_leader_id", SqlDbType.NVarChar).Value = projectleaderid;
+                    cmd.Parameters.Add("@next_iteration_date", SqlDbType.DateTime).Value = nextiterationdate;
+                    cmd.Parameters.Add("@created_by_userid", SqlDbType.Int).Value = createdbyuserid;
+                    cmd.Parameters.Add("@project_leader_id", SqlDbType.Int).Value = projectleaderid;
 
                     con.Open();
                     object result = cmd.ExecuteScalar();
@@ -46,6 +46,31 @@ namespace BugMateSystem.BLL
                     return (int?)result;
                 }
             }
+        }
+        public List<Project> Project_By_Userid(int? userid)
+        {
+            using (var context = new BugMateContext())
+            {
+                IEnumerable<Project> results =
+                context.Database.SqlQuery<Project>("find_ticket_by_user_id @userid", new SqlParameter("userid", userid));
+
+                return results.ToList();
+            }
+            //using (SqlConnection con = new SqlConnection(new BugMateContext().Database.Connection.ConnectionString))
+            //{
+            //    using (SqlCommand cmd = new SqlCommand("find_ticket_by_user_id", con))
+            //    {
+            //        cmd.CommandType = CommandType.StoredProcedure;
+
+            //        cmd.Parameters.Add("@userid", SqlDbType.Int).Value = userid;
+
+            //        con.Open();
+            //        object result = cmd.ExecuteNonQuery();
+            //        con.Close();
+
+            //        return result;
+            //    }
+            //}
         }
     }
 }

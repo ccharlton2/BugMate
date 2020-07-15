@@ -14,13 +14,7 @@ namespace BugMateSystem.BLL
 {
     public class TicketController
     {
-        public List<Project> Project_List()
-        {
-            using (var context = new BugMateContext())
-            {
-                return context.Projects.ToList();
-            }
-        }
+        
     }
 
 }
