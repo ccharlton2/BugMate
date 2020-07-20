@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BugMateSystem.BLL;
 using BugMateSystem.Entities;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace BugMateWebApp.WebPages
 {
@@ -24,20 +26,45 @@ namespace BugMateWebApp.WebPages
             try
             {
                 ProjectController sysmgr = new ProjectController();
-                List<Project> info = null;
+                DataTable info = null;
                 info = sysmgr.Project_By_Userid(19);
-                info.Sort((x, y) => x.Project_name.CompareTo(y.Project_name));
+                //info.Sort((x, y) => x.Project_name.CompareTo(y.Project_name));
                 ProjectNameSelect.DataSource = info;
                 ProjectNameSelect.DataTextField = nameof(Project.Project_name);
                 ProjectNameSelect.DataValueField = nameof(Project.Project_number);
                 ProjectNameSelect.DataBind();
-                ProjectNameSelect.Items.Insert(0, "select...");
+                ProjectNameSelect.Items.Insert(0, "Select...");
             }
             catch (Exception ex)
             {
                 _usermsgs.Add(GetInnerException(ex).ToString());
                 LoadMessageDisplay(_usermsgs, "alert alert-danger");
             }
+        }
+
+        protected void CreateTicketButton_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                try
+                {
+                    TicketController sysmgr = new TicketController();
+                    sysmgr.Create_Ticket(DateTime.UtcNow, BugDescription.InnerText, SuggestedSolution.InnerText, 1, ProjectNameSelect.SelectedValue, BugTypeSelect.SelectedValue, PrioritySelect.SelectedValue)
+
+                    _usermsgs.Add("Ticket has been successfully created.");
+                    LoadMessageDisplay(_usermsgs, "alert alert-success");
+                }
+                catch (Exception ex)
+                {
+                    _usermsgs.Add(ex.Message);
+                    LoadMessageDisplay(_usermsgs, "alert alert-danger");
+                }
+            }
+        }
+
+        protected void SaveTicketButton_Click(object sender, EventArgs e)
+        {
+
         }
 
         protected void LoadMessageDisplay(List<string> errormsglist, string cssclass)
@@ -61,5 +88,6 @@ namespace BugMateWebApp.WebPages
             }
             return ex;
         }
+
     }
 }

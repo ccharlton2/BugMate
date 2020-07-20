@@ -47,30 +47,33 @@ namespace BugMateSystem.BLL
                 }
             }
         }
-        public List<Project> Project_By_Userid(int? userid)
+        public DataTable Project_By_Userid(int? userid)
         {
-            using (var context = new BugMateContext())
-            {
-                IEnumerable<Project> results =
-                context.Database.SqlQuery<Project>("find_ticket_by_user_id @userid", new SqlParameter("userid", userid));
-
-                return results.ToList();
-            }
-            //using (SqlConnection con = new SqlConnection(new BugMateContext().Database.Connection.ConnectionString))
+            //using (var context = new BugMateContext())
             //{
-            //    using (SqlCommand cmd = new SqlCommand("find_ticket_by_user_id", con))
-            //    {
-            //        cmd.CommandType = CommandType.StoredProcedure;
+            //    IEnumerable<List<string>> results =
+            //    context.Database.SqlQuery<List<string>>("find_project_by_user_id @userid", new SqlParameter("userid", userid));
 
-            //        cmd.Parameters.Add("@userid", SqlDbType.Int).Value = userid;
-
-            //        con.Open();
-            //        object result = cmd.ExecuteNonQuery();
-            //        con.Close();
-
-            //        return result;
-            //    }
+            //    return results.Select<>
             //}
+            using (SqlConnection con = new SqlConnection(new BugMateContext().Database.Connection.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("find_project_by_user_id", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@userid", SqlDbType.Int).Value = userid;
+                    SqlDataAdapter sqladp = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    sqladp.Fill(dt);
+
+                    //con.Open();
+                    //object result = cmd.ExecuteNonQuery();
+                    //con.Close();
+
+                    return dt;
+                }
+            }
         }
     }
 }
