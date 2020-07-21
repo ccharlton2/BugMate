@@ -19,16 +19,16 @@ namespace BugMateSystem.BLL
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@project_name", SqlDbType.DateTime).Value = savedate;
-                    cmd.Parameters.Add("@date_started", SqlDbType.NVarChar).Value = errordescription;
-                    cmd.Parameters.Add("@project_description", SqlDbType.NVarChar).Value = suggestedsolution;
-                    cmd.Parameters.Add("@project_active", SqlDbType.Int).Value = projectnumber;
-                    cmd.Parameters.Add("@next_iteration_date", SqlDbType.NVarChar).Value = tickettype;
-                    cmd.Parameters.Add("@created_by_userid", SqlDbType.NVarChar).Value = ticketpriority;
-                    cmd.Parameters.Add("@project_leader_id", SqlDbType.NVarChar).Value = errorfrequency;
-                    cmd.Parameters.Add("@project_leader_id", SqlDbType.NVarChar).Value = errorcode;
-                    cmd.Parameters.Add("@project_leader_id", SqlDbType.Int).Value = savedbyuserid;
-                    cmd.Parameters.Add("@project_leader_id", SqlDbType.Int).Value = saveid;
+                    cmd.Parameters.Add("@save_date", SqlDbType.DateTime).Value = savedate;
+                    cmd.Parameters.Add("@error_description", SqlDbType.NVarChar).Value = errordescription;
+                    cmd.Parameters.Add("@suggested_solution", SqlDbType.NVarChar).Value = suggestedsolution;
+                    cmd.Parameters.Add("@project_number", SqlDbType.Int).Value = projectnumber;
+                    cmd.Parameters.Add("@ticket_type", SqlDbType.NVarChar).Value = tickettype;
+                    cmd.Parameters.Add("@ticket_priority", SqlDbType.NVarChar).Value = ticketpriority;
+                    cmd.Parameters.Add("@error_frequency", SqlDbType.NVarChar).Value = errorfrequency;
+                    cmd.Parameters.Add("@error_code", SqlDbType.NVarChar).Value = errorcode;
+                    cmd.Parameters.Add("@saved_by_userid", SqlDbType.Int).Value = savedbyuserid;
+                    cmd.Parameters.Add("@save_id", SqlDbType.Int).Value = saveid;
 
                     con.Open();
                     object result = cmd.ExecuteScalar();

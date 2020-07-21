@@ -60,7 +60,7 @@
 
             <div class="form-group">
                 <label for="ErrorCode">Error Code</label>
-                <input type="text" class="form-control col-12" id="ErrorCode" />
+                <asp:TextBox ID="ErrorCode" runat="server" CssClass="form-control col-12"></asp:TextBox>
             </div>
 
             <div class="form-group">
