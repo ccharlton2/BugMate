@@ -40,7 +40,24 @@ namespace BugMateWebApp.WebPages
 
         protected void SaveProject_Click(object sender, EventArgs e)
         {
+            if (Page.IsValid)
+            {
+                try
+                {
+                    Saved_projectController sysmgr = new Saved_projectController();
+                    sysmgr.Save_Project((int?)Session["Userid"] == null ? 19 : (int?)Session["Userid"], DateTime.UtcNow, ProjectDescription.Text, ProjectMaintenance.Checked ? "Maintenance" : "InDevelopment", true, DateTime.Parse(NextIterationDate.Value), ProjectName.Text);
 
+                    _usermsgs.Add("Project has been saved successfully.");
+                    LoadMessageDisplay(_usermsgs, "alert alert-success");
+                }
+                catch (Exception ex)
+                {
+                    _usermsgs.Add(GetInnerException(ex).ToString());
+                    LoadMessageDisplay(_usermsgs, "alert alert-danger");
+                    //_usermsgs.Add(ex.Message);
+                    //LoadMessageDisplay(_usermsgs, "alert alert-danger");
+                }
+            }
         }
 
         protected void LoadMessageDisplay(List<string> errormsglist, string cssclass)

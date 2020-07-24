@@ -20,14 +20,14 @@ namespace BugMateSystem.BLL
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@project_name", SqlDbType.Int).Value = savedbyuserid;
-                    cmd.Parameters.Add("@date_started", SqlDbType.DateTime).Value = savedate;
+                    cmd.Parameters.Add("@saved_by_userid", SqlDbType.Int).Value = savedbyuserid;
+                    cmd.Parameters.Add("@save_date", SqlDbType.DateTime).Value = savedate;
                     cmd.Parameters.Add("@project_description", SqlDbType.NVarChar).Value = projectdescription;
                     cmd.Parameters.Add("@project_status", SqlDbType.NVarChar).Value = projectstatus;
                     cmd.Parameters.Add("@project_active", SqlDbType.NVarChar).Value = projectactive;
                     cmd.Parameters.Add("@next_iteration_date", SqlDbType.DateTime).Value = nextiterationdate;
-                    cmd.Parameters.Add("@created_by_userid", SqlDbType.NVarChar).Value = projectname;
-                    cmd.Parameters.Add("@project_leader_id", SqlDbType.Int).Value = saveid;
+                    cmd.Parameters.Add("@project_name", SqlDbType.NVarChar).Value = projectname;
+                    cmd.Parameters.Add("@save_id", SqlDbType.Int).Value = saveid;
 
                     con.Open();
                     object result = cmd.ExecuteScalar();

@@ -79,7 +79,7 @@
 
                 <div class="form-group">
                     <label for="RolePermission" class="item-left">
-                        Role Password (optional)<a href="#" data-toggle="tooltip" data-placement="bottom" title="Applicable to user's who have been given a Role Password that will enable them to access higher level permissions.">
+                        Role Password (Optional)<a href="#" data-toggle="tooltip" data-placement="bottom" title="Applicable to user's who have been given a Role Password that will enable them to access higher level permissions.">
                             <i class="far fa-question-circle"></i>
                         </a>
                     </label>

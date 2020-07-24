@@ -16,7 +16,7 @@
 
             <div class="form-group">
                 <label for="ProjectName">Project Name</label>
-                <asp:TextBox runat="server" ID="ProjectName" CssClass="form-control col-12" placeholder="Project Name" required="True" autofocus="True"></asp:TextBox>
+                <asp:TextBox runat="server" ID="ProjectName" CssClass="form-control col-12" placeholder="Project Name" required="True" autofocus="True" autocomplete="off"></asp:TextBox>
             </div>
 
             <div class="form-group">
